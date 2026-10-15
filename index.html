@@ -8,10 +8,33 @@
     <link rel="stylesheet" href="./src/styles/main.css">
 </head>
 <body>
+    <h2>JOGO DA MEMÓRIA</h2>
+
     <div class="container">
-        <h2>JOGO DA MEMÓRIA</h2>
-        <div class="game"></div>
-        <button class="reset" onclick="window.location.reload()">RESET GAME</button>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="level-select">Nível:</label>
+                <select id="level-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+       
+
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="timer-toggle">
+                Desafio do tempo
+            </label>
+        </div>
+
+        <div id="timer-display" class="timer hidden">
+            tempo: <span id="time-left">60</span>
+        </div>
+        </div>
+        <div class="game" id="game-board"></div>
+        <button class="reset" id="reset-btn">RESET GAME</button>
     </div>
     <script src="./src/scripts/engine.js"></script>
 </body>

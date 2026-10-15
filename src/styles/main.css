@@ -1,11 +1,24 @@
 body{
     display: flex;
+    flex-direction: column;
+    gap:30px;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #fc1e8a;
+    background-color: #abaeb4;
     user-select: none;
 
+}
+
+h2{
+    font-size: 2.2em;
+    color: #111827;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .container{
@@ -15,15 +28,52 @@ body{
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background: linear-gradient(325deg,#03001e 0%, #7303c0 30%, #ec38bc 70%, #fdeff9 100%);
+    background: linear-gradient(325deg, #111827 0%, #374151 50%, #6b7280 100%);
     padding: 40px 60px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-h2{
-    font-size: 3em;
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
     color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: 1.1em;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 25px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-group select,
+.control-group input,
+.control-group label {
+    cursor: pointer;
+}
+
+.control-group select {
+    padding: 4px 8px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    border: none;
+}
+
+.timer {
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+.hidden {
+    display: none;
 }
 
 .reset{
@@ -37,33 +87,48 @@ h2{
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    border-radius: 8px;
 }
 
-.reset:focus{
-    color: #ec38bc;
-    background-color: #262809 ; 
+.reset:active {
+    color: #ffffff;
+    background-color: #374151;
 }
 
-.game{
-    width: 430px;
-    height: 430px;
-    display: flex;
-    flex-wrap: wrap;
+.game {
+    display: grid;
     gap: 10px;
     transform-style: preserve-3d;
     perspective: 500px;
 }
 
-.item{
-    position: relative;
+.game.grid-4x4 {
+    grid-template-columns: repeat(4, 100px);
+}
+
+.game.grid-4x4 .item{
     width: 100px;
     height: 100px;
+    font-size: 3em;
+}
+
+.game.grid-6x6 {
+    grid-template-columns: repeat(6, 70px);
+    gap: 8px;
+}
+
+.game.grid-6x6 .item {
+    width: 70px;
+    height: 70px;
+    font-size: 2em;
+}
+
+.item{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff;
-
-    font-size: 3em;
     transition: 0.25s;
 }
 
@@ -75,9 +140,7 @@ h2{
     transition: 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
-
 }
-
 
 
 .boxOpen::after,
