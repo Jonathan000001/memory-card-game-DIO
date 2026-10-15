@@ -147,3 +147,48 @@ h2{
 .boxMatch::after{
     transform: rotateY(180deg);
 }
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .container {
+        padding: 20px 15px;
+        width: 90%; 
+        box-sizing: border-box;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .game.grid-4x4 {
+        grid-template-columns: repeat(4, minmax(50px, 1fr)); 
+        gap: 8px;
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .game.grid-4x4 .item {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        font-size: 2.2em;
+    }
+
+    .game.grid-6x6 {
+        grid-template-columns: repeat(6, minmax(35px, 1fr));
+        gap: 5px;
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .game.grid-6x6 .item {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        font-size: 1.5em;
+    }
+}
