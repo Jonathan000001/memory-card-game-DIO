@@ -154,9 +154,9 @@ h2{
     }
 
     .container {
-        padding: 20px 15px;
-        width: 90%; 
-        box-sizing: border-box;
+        padding: 20px 10px; 
+        width: 95%; 
+        box-sizing: border-box; 
     }
 
     .controls {
@@ -164,31 +164,32 @@ h2{
         gap: 15px;
     }
 
-    .game.grid-4x4 {
-        grid-template-columns: repeat(4, minmax(50px, 1fr)); 
-        gap: 8px;
+    .game {
+        justify-content: center;
         width: 100%;
-        max-width: 320px;
+    }
+
+    .game.grid-4x4 {
+        grid-template-columns: repeat(4, minmax(45px, 65px)); 
+        gap: 6px;
     }
     
     .game.grid-4x4 .item {
         width: 100%;
         height: auto;
-        aspect-ratio: 1 / 1;
-        font-size: 2.2em;
+        aspect-ratio: 1 / 1; 
+        font-size: 1.8em;
     }
 
     .game.grid-6x6 {
-        grid-template-columns: repeat(6, minmax(35px, 1fr));
-        gap: 5px;
-        width: 100%;
-        max-width: 320px;
+        grid-template-columns: repeat(6, minmax(30px, 45px));
+        gap: 4px;
     }
     
     .game.grid-6x6 .item {
         width: 100%;
         height: auto;
-        aspect-ratio: 1 / 1;
-        font-size: 1.5em;
+        aspect-ratio: 1 / 1; 
+        font-size: 1.2em;
     }
 }
